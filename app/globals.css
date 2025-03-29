@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  --line-color: #e5e7eb;
+}
+
+html.dark {
+  --line-color: rgba(255, 255, 255, 0.2);
+}
+
+.borderBlack {
+  @apply border border-black/10;
+}
+
+/* Cloud Animation Styles */
+.clouds-container {
+  position: absolute;
+  inset: 0;
+  filter: blur(100px);
+}
+
+.cloud {
+  position: absolute;
+  border-radius: 50%;
+  animation: float 15s infinite linear; /* Changed from 20s to 15s */
+  opacity: 0.5;
+}
+
+.cloud1 {
+  width: 400px;
+  height: 400px;
+  background: #fbe2e3;
+  left: -100px;
+  top: 20%;
+  animation-delay: -1.5s; /* Changed from -2s */
+}
+
+.cloud2 {
+  width: 500px;
+  height: 500px;
+  background: #dbd7fb;
+  right: -100px;
+  top: 40%;
+  animation-delay: -3.5s; /* Changed from -5s */
+}
+
+.cloud3 {
+  width: 450px;
+  height: 450px;
+  background: #676394;
+  left: 30%;
+  top: 60%;
+  animation-delay: -5s; /* Changed from -7s */
+}
+
+.cloud4 {
+  width: 350px;
+  height: 350px;
+  background: #946263;
+  right: 20%;
+  top: 10%;
+  animation-delay: -7s; /* Changed from -9s */
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(50px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-50px, 50px) scale(0.9);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+/* Dark mode adjustments */
+.dark .cloud1 { background: #946263; }
+.dark .cloud2 { background: #676394; }
+.dark .cloud3 { background: #4a4a6c; }
+.dark .cloud4 { background: #6c4a4a; }
